@@ -5,6 +5,7 @@ export interface IOption {
   priceStorage: number;
   priceTransfer: number;
   freeSize?: number;
+  checked: boolean;
 }
 
 export interface IObject {
@@ -15,6 +16,13 @@ export interface IObject {
   priceTransfer?: number;
   isOptions: boolean;
   options?: IOption[];
+  slug: string;
+  diapason: number[];
+  price: number;
+}
+
+export interface IRange {
+  graph: IObject;
 }
 
 export type TwoThumbsProps = {

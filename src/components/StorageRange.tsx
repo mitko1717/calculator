@@ -6,13 +6,13 @@ const STEP = 1;
 const MIN = 1;
 const MAX = 1000;
 
-const Basic: FC<TwoThumbsProps> = ({ rtl, rangeValue, setRangeValue, }) => {
+const Basic: FC<TwoThumbsProps> = ({ rtl, rangeValue, setRangeValue }) => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
+        display: "flex",
+        justifyContent: "center",
+        flexWrap: "wrap",
         margin: "0 auto",
       }}
     >
@@ -42,18 +42,20 @@ const Basic: FC<TwoThumbsProps> = ({ rtl, rangeValue, setRangeValue, }) => {
                   max: MAX,
                   rtl,
                 }),
-                alignSelf: 'center'
+                alignSelf: "center",
               }}
               className="h-[5px] w-full rounded self-center"
             >
               {children}
             </div>
             <output
-              className="absolute top-0 w-full text-center"
+              className="absolute top-0 w-full flex text-center justify-between"
               id="output"
               style={{ fontSize: "12px" }}
             >
-              Storage: {rangeValue[0]} GB
+              <span>{MIN}</span>
+              <span>Storage: {rangeValue[0]} GB</span>
+              <span>{MAX}</span>
             </output>
           </div>
         )}

@@ -6,9 +6,7 @@ export const graphicApi = createApi({
     // baseUrl: "https://api.spaceflightnewsapi.net/v3/",
   }),
   refetchOnFocus: true,
-  endpoints: (build) => ({
-
-  }),
+  endpoints: (build) => ({}),
 });
 
-export const { } = graphicApi;
+export const {} = graphicApi;

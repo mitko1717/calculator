@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IArticle } from "./../../models/interfaces";
+import { IArticle } from "../../models/interfaces";
 
 export const articlesApi = createApi({
   reducerPath: "github/api",

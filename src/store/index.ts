@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { articlesApi } from "./articles/articles.api";
+import { articlesApi } from "./graphic/graphic.api";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { articleReducer } from "./articles/articles.slice";
+import { articleReducer } from "./graphic/graphic.slice";
 
 export const store = configureStore({
   reducer: {

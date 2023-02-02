@@ -3,7 +3,7 @@ import { Range, getTrackBackground } from "react-range";
 import { TwoThumbsProps } from "../models/interfaces";
 
 const STEP = 1;
-const MIN = 1;
+const MIN = 0;
 const MAX = 1000;
 
 const Basic: FC<TwoThumbsProps> = ({ rtl, rangeValue, setRangeValue }) => {

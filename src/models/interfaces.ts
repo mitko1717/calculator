@@ -11,14 +11,15 @@ export interface IOption {
 export interface IObject {
   provider: string;
   icon: string;
-  minPayment: number;
+  minPayment?: number;
+  maxPayment?: number;
   priceStorage?: number;
   priceTransfer?: number;
   isOptions: boolean;
   options?: IOption[];
   slug: string;
-  diapason: number[];
   price: number;
+  sales?: boolean;
 }
 
 export interface IRange {

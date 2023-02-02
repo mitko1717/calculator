@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
-import { articleActions } from "../store/graphic/graphic.slice";
+import { graphicActions } from "../store/graphic/graphic.slice";
 
 const actions = {
-  ...articleActions,
+  ...graphicActions,
 };
 
 export const useActions = () => {

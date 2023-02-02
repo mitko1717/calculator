@@ -1,23 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IArticle } from "../../models/interfaces";
+import { IObject } from "../../models/interfaces";
+import { DATA } from "../../../DATA"
 
-interface GithubState {
-  openedArticle: IArticle | null;
+interface GraphicState {
+  graphic: IObject[];
 }
 
-const initialState: GithubState = {
-  openedArticle: null,
+const initialState: GraphicState = {
+  graphic: DATA,
 };
 
-export const articleSlice = createSlice({
-  name: "article",
+export const graphicSlice = createSlice({
+  name: "graphic",
   initialState,
   reducers: {
-    setArticle(state, action: PayloadAction<IArticle>) {
-      state.openedArticle = action.payload;
-    },
+    
   },
 });
 
-export const articleActions = articleSlice.actions;
-export const articleReducer = articleSlice.reducer;
+export const graphicActions = graphicSlice.actions;
+export const graphicReducer = graphicSlice.reducer;

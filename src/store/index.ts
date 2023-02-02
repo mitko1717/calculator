@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { articlesApi } from "./graphic/graphic.api";
+import { graphicApi } from "./graphic/graphic.api";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { articleReducer } from "./graphic/graphic.slice";
+import { graphicReducer } from "./graphic/graphic.slice";
 
 export const store = configureStore({
   reducer: {
-    [articlesApi.reducerPath]: articlesApi.reducer,
-    article: articleReducer,
+    [graphicApi.reducerPath]: graphicApi.reducer,
+    graphic: graphicReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(articlesApi.middleware),
+    getDefaultMiddleware().concat(graphicApi.middleware),
 });
 
 setupListeners(store.dispatch);

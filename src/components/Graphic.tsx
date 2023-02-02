@@ -1,20 +1,24 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useActions } from "../hooks/actions";
-import { IArticle } from "../models/interfaces";
+import StorageRange from "./StorageRange";
+import TransferRange from "./TransferRange";
 
-export type ArticleCardProps = {
-  art: IArticle;
-  query: string;
+const Graphic: FC = ({}) => {
+  const { } = useActions();
+
+  const [storageRangeValues, setStorageRangeValues] = useState([1]);
+  const [transferRangeValues, setTransferRangeValues] = useState([1]);
+
+  return <div className="w-[400px] mx-auto md:w-full h-[100vh]">
+    
+
+    <StorageRange rtl={false} 
+                  rangeValue={storageRangeValues}
+                  setRangeValue={setStorageRangeValues}/>
+    <TransferRange rtl={false}
+                  rangeValue={transferRangeValues}
+                  setRangeValue={setTransferRangeValues}/>
+  </div>;
 };
 
-const ArticleCard: FC<ArticleCardProps> = ({ }) => {
-  const { setArticle } = useActions();
-
-  return (
-    <div className="">
- 
-    </div>
-  );
-};
-
-export default ArticleCard;
+export default Graphic;

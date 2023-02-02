@@ -1,23 +1,24 @@
-export interface IArticle {
-  id: number;
-  title: string;
-  url: string;
-  imageUrl: string;
-  newsSite: string;
-  summary: string;
-  publishedAt: Date;
-  updatedAt: Date;
-  featured: boolean;
-  launches: any[];
-  events: any[];
+import { Dispatch, SetStateAction } from "react";
+
+export interface IOption {
+  provider: string;
+  priceStorage: number;
+  priceTransfer: number;
+  freeSize?: number;
 }
 
-export type SummaryProps = {
-  summary: string;
-  query: string;
-};
+export interface IObject {
+  provider: string;
+  icon: string;
+  minPayment: number;
+  priceStorage?: number;
+  priceTransfer?: number;
+  isOptions: boolean;
+  options?: IOption[];
+}
 
-export type TitleProps = {
-  title: string;
-  query: string;
+export type TwoThumbsProps = {
+  rtl: boolean;
+  rangeValue: number[];
+  setRangeValue: Dispatch<SetStateAction<number[]>>;
 };

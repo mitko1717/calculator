@@ -21,6 +21,7 @@ export default function Chart() {
 
   useEffect(() => {
     setActiveCompany(graphic[0].provider);
+    // eslint-disable-next-line
   }, [graphic]);
 
   const handleClick = (provider: string) => {
@@ -29,6 +30,7 @@ export default function Chart() {
 
   useEffect(() => {
     setDefaultPriceForMultipleOptions();
+    // eslint-disable-next-line
   }, []);
 
   const radioClickHandler = (object: IObject) => {
@@ -37,6 +39,7 @@ export default function Chart() {
 
   useEffect(() => {
     onChangeAnyRange();
+    // eslint-disable-next-line
   }, [transferRangeValue, storageRangeValue, radioChangeCounter]);
 
   return (
@@ -60,6 +63,7 @@ export default function Chart() {
             <img
               className="w-[20px] h-[20px] mx-auto mb-1"
               src={entry.icon}
+              alt={entry.provider}
             ></img>
             <span>{entry.provider}</span>
             <p className="mt-1">

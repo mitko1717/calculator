@@ -44,7 +44,7 @@ export const graphicSlice = createSlice({
         return Math.round(value * multiplier) / multiplier;
       };
 
-      let newGraphic = state.graphic.map((graph) => {
+      state.graphic.forEach((graph) => {
         if (
           graph.isOptions &&
           graph.priceTransfer === undefined &&

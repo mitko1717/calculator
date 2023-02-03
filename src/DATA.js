@@ -35,6 +35,7 @@ export const DATA = [
   {
     provider: "scaleway.com",
     price: 0,
+    minPayment: 0,
     slug: "scaleway",
     icon: thirdIcon,
     isOptions: true,

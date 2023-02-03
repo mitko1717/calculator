@@ -12,20 +12,24 @@ const Graphic: FC = ({}) => {
   const { setStorageRangeValue, setTransferRangeValue } = useActions();
 
   return (
-    <div className="w-[400px] mx-auto md:w-full h-[100vh]">
+    <div className="mx-auto w-full h-[100vh]">
       <h1 className="font-bold py-2 text-2xl text-center">CALCULATOR</h1>
-      <Chart />
+      <div className="w-[400px] mx-auto">
+        <Chart />
+      </div>
 
-      <StorageRange
-        rtl={false}
-        rangeValue={storageRangeValue}
-        setRangeValue={setStorageRangeValue}
-      />
-      <TransferRange
-        rtl={false}
-        rangeValue={transferRangeValue}
-        setRangeValue={setTransferRangeValue}
-      />
+      <div className="w-full h-auto flex flex-col md:flex-row md:justify-center">
+        <StorageRange
+          rtl={false}
+          rangeValue={storageRangeValue}
+          setRangeValue={setStorageRangeValue}
+        />
+        <TransferRange
+          rtl={false}
+          rangeValue={transferRangeValue}
+          setRangeValue={setTransferRangeValue}
+        />
+      </div>
     </div>
   );
 };

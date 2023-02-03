@@ -9,11 +9,11 @@ const MAX = 1000;
 const Basic: FC<TwoThumbsProps> = ({ rtl, rangeValue, setRangeValue }) => {
   return (
     <div
+      className="md:w-[30%] md:px-2"
       style={{
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        margin: "0 auto",
       }}
     >
       <Range

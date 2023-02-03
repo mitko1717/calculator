@@ -5,8 +5,13 @@ import { useAppSelector } from "../hooks/redux";
 import { IObject } from "../models/interfaces";
 
 export default function Chart() {
-  const { graphic, activeCompany, transferRangeValue, storageRangeValue } =
-    useAppSelector((state) => state.graphic);
+  const {
+    graphic,
+    activeCompany,
+    transferRangeValue,
+    storageRangeValue,
+    radioChangeCounter,
+  } = useAppSelector((state) => state.graphic);
   const {
     setActiveCompany,
     changeRadioInput,
@@ -18,13 +23,13 @@ export default function Chart() {
     setActiveCompany(graphic[0].provider);
   }, [graphic]);
 
-  useEffect(() => {
-    setDefaultPriceForMultipleOptions();
-  }, []);
-
   const handleClick = (provider: string) => {
     setActiveCompany(provider);
   };
+
+  useEffect(() => {
+    setDefaultPriceForMultipleOptions();
+  }, []);
 
   const radioClickHandler = (object: IObject) => {
     changeRadioInput(object);
@@ -32,7 +37,7 @@ export default function Chart() {
 
   useEffect(() => {
     onChangeAnyRange();
-  }, [transferRangeValue, storageRangeValue]);
+  }, [transferRangeValue, storageRangeValue, radioChangeCounter]);
 
   return (
     <div className="mb-6">

@@ -7,6 +7,7 @@ interface GraphicState {
   activeCompany: string | null;
   storageRangeValue: number[];
   transferRangeValue: number[];
+  radioChangeCounter: number;
 }
 
 const initialState: GraphicState = {
@@ -14,6 +15,7 @@ const initialState: GraphicState = {
   activeCompany: null,
   storageRangeValue: [0],
   transferRangeValue: [0],
+  radioChangeCounter: 0,
 };
 
 export const graphicSlice = createSlice({
@@ -26,6 +28,8 @@ export const graphicSlice = createSlice({
     changeRadioInput(state, action: PayloadAction<IObject>) {
       let findObj = state.graphic.find((o) => o.slug === action.payload.slug);
       findObj?.options?.forEach((o) => (o.checked = !o.checked));
+
+      state.radioChangeCounter++;
     },
     setDefaultPriceForMultipleOptions(state) {
       state.graphic.forEach((gr, index) => {
@@ -38,7 +42,7 @@ export const graphicSlice = createSlice({
       const round = (value: number, precision: number) => {
         let multiplier = Math.pow(10, precision || 0);
         return Math.round(value * multiplier) / multiplier;
-      }
+      };
 
       let newGraphic = state.graphic.map((graph) => {
         if (
